@@ -5,3 +5,4 @@ data/
 !wordpress/*.yml
 !wordpress/**/*.ini
 !share/*.yml
+!share/conf/*
