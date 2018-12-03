@@ -1,3 +1,6 @@
 www/
 db/
 data/
+*.yml
+!wordpress/*.yml
+!share/*.yml

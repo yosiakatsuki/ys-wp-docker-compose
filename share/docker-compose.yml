@@ -1,5 +1,17 @@
 version: '3.5'
 services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+
   nginx-proxy:
     image: jwilder/nginx-proxy
     ports:
@@ -26,6 +38,9 @@ services:
       - ./data/vhost.d:/etc/nginx/vhost.d
       - ./data/html:/usr/share/nginx/html
     restart: always
+
+volumes:
+  db_data:
 
 networks:
   default:
