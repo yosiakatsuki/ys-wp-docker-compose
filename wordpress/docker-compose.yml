@@ -6,6 +6,7 @@ services:
     hostname: aktk.local
     volumes:
       - ./www:/var/www/html
+      - ./php/ini/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     #ports:
     #  - "8000:80"
     restart: always
