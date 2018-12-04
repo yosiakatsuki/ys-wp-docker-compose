@@ -22,19 +22,11 @@ $ sudo vi /etc/hosts
 
 ### SSL対応
 
-オレオレ証明書をローカルで作る
+自己証明書（オレオレ証明書）をローカルで作る
 
-`xxxx.local`のドメインをまとめてSSL対応できるように`local.key`のような名前で作る。
+複数ホストに対応させるために「Subject Alternative Name」を使用する
 
-```
-$ openssl genrsa 2048 > local.key
-$ openssl req -new -key local.key > local.csr
-# いろいろ訊かれるので適当に入力
-# パスワードだけは空にする
-# ----
-# 有効期限も適当に長くしておく
-$ openssl x509 -in local.csr -days 10000 -req -signkey local.key > local.crt
-```
+調査・実験中…
 
 `./data/certs`に保存する。（コンテナの`/etc/nginx/certs`と同期させているフォルダに保存。）
 
