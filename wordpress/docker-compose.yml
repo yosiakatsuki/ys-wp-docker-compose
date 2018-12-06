@@ -25,4 +25,4 @@ services:
 networks:
   default:
     external:
-      name: aktk_local
+      name: nginxproxy_default
