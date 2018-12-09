@@ -18,7 +18,7 @@ services:
       - "80:80"
       - "443:443"
     environment:
-      DEFAULT_HOST: aktk.local
+      DEFAULT_HOST: aktk.lo
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./data/certs:/etc/nginx/certs

@@ -3,20 +3,15 @@ version: '3.3'
 services:
   wordpress:
     image: wordpress:latest
-    hostname: aktk.local
+    hostname: aktk.lo
     volumes:
       - ./www:/var/www/html
       - ./php/ini/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-    #ports:
-    #  - "8000:80"
     restart: always
     external_links:
       - mysql
     environment:
-      VIRTUAL_HOST: aktk.local
-      #VIRTUAL_PORT: 8003
-      #LETSENCRYPT_HOST: aktk.local
-      #LETSENCRYPT_EMAIL: aktk@aktk.local
+      VIRTUAL_HOST: aktk.lo
       WORDPRESS_DB_HOST: mysql:3306
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: root
