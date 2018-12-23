@@ -12,6 +12,12 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: root
 
+  adminer:
+      image: adminer
+      restart: always
+      ports:
+        - 8888:8080
+
   nginx-proxy:
     image: jwilder/nginx-proxy
     ports:
